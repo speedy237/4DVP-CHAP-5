@@ -1,0 +1,32 @@
+on:
+  push:
+    
+jobs:
+  prepare_test:
+    runs-on:  ubuntu-latest
+    outputs:
+      host:  ${{steps.allocate_host.outputs.host}}
+      DataBase:  ${{steps.allocate_host.outputs.DataBase}}
+    steps:
+      - name:  allocate host
+        id:  allocate_host
+        run:  |
+           echo  "host=sr1" >> $GITHUB_OUTPUT
+           echo  "DataBase=prep001" >> $GITHUB_OUTPUT
+  display_info:
+    needs:  prepare_test
+    runs-on:  ubuntu-latest
+    steps:
+      - name:  print outputs
+        run:  |
+             echo "Host=${{needs.prepare_test.ouputs.host}}"
+             echo "DataBase=${{needs.prepare_test.ouputs.DataBase}}"
+    
+    
+
+
+
+      
+
+      
+
