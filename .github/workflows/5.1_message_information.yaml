@@ -9,6 +9,8 @@ jobs:
         run:  echo "::notice::ceci est une notice"
       - name:  info type warning
         run:  echo "::warning::ceci est un avertissement"
+      - name:  info type error
+        run:  echo "::error::une erreur est survenu"
 
       
 
