@@ -1,0 +1,14 @@
+on:
+  push:
+    
+jobs:
+  information_display:
+    runs-on:  ubuntu-latest
+    steps:
+      - name:  info type notice
+        run:  echo "::notice::ceci est une notice"
+      - name:  info type warning
+        run:  echo "::warning::ceci est un avertissement"
+
+      
+
